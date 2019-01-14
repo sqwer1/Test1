@@ -16,6 +16,11 @@
 ```sh
  npm install --save-dev webpack
 ```
+Скачать API для использования JSON Server
+
+```sh
+ npm install json-server
+```
 
 ## Запуск
 
