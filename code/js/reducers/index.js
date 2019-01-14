@@ -1,11 +1,10 @@
 ﻿import {combineReducers} from 'redux';
-import PhotosReducers from './photos';
-import ActivePhoto from './photos-active';
-
+import {items} from './items';
+import ActiveItem from './item-active';
 
 const allReducers = combineReducers ({
-	photos: PhotosReducers,
-	active: ActivePhoto
+	items,
+	active: ActiveItem
 });
 
 export default allReducers

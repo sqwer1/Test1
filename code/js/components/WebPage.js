@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import PhotosList from '../containers/photos-list';
+import ItemList from '../containers/item';
 import Details from '../containers/details';
 
 const divStyle = {
@@ -13,10 +13,9 @@ const divStyle = {
 
 const WebPage = () => (
 	<div>
-		<h3>Товары:</h3>
-		<PhotosList/>
+		<ItemList/>
 		<div style={divStyle}>
-		<Details/>
+			<Details/>
 		</div>
 	</div>
 );

@@ -17,7 +17,7 @@ constructor(props) {
     };
   };
 
-countPay (photo)
+countPay (item)
 {
 	var count = this.state.countpay;
 	var name = this.state.name;
@@ -25,7 +25,7 @@ countPay (photo)
 	count = count+1;
 	this.setState({countpay: count});
 	for (var k = 0; k <= i;) {
-	if (name[k] == photo.title) {
+	if (name[k] == item.title) {
 		number[k] = number[k] + 1;
 		this.setState({number: number});
 		break;
@@ -34,7 +34,7 @@ countPay (photo)
 		if (k < i) {
 			k = k + 1;
 		} else {
-				name[i] = photo.title;
+				name[i] = item.title;
 				number[i] = 1;
 				this.setState({name: name});
 				this.setState({number: number});
@@ -71,18 +71,18 @@ deletePay (i)
 	
 	render () {
 		
-		if (!this.props.photo) {
+		if (!this.props.item) {
 			return (<h2>Выберете товар</h2>);
 		}
 		return (
 			<div>
-				<h2>{this.props.photo.title}</h2>
-				<img src={this.props.photo.url}/>
+				<h2>{this.props.item.title}</h2>
+				<img src={this.props.item.url}/>
 				<h2>Корзина:{this.state.countpay}</h2>
 				<h3>
 					{this.state.name.map( (x, i) => <div>{"товар: " + x + " количество: " + this.state.number[i] + " "} <button onClick={() => this.deletePay(i)}>Удалить товар</button></div>)}
 				</h3>
-				<button onClick={() => this.countPay(this.props.photo)}>Добавить в корзину</button>
+				<button onClick={() => this.countPay(this.props.item)}>Добавить в корзину</button>
 			</div>
 		);
 	}
@@ -90,7 +90,7 @@ deletePay (i)
 	
 function mapStateToProps (state) {
 	return {
-		photo: state.active	
+		item: state.active	
 	};
 }
 
